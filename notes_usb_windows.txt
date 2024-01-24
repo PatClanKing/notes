@@ -1,0 +1,44 @@
+you can see the devices attached to windows machine with
+
+pnputil /enum-devices /class USB
+
+Example output...
+Instance ID:                PCI\VEN_8086&DEV_A12F&SUBSYS_08021028&REV_31\3&11583659&0&A0
+Device Description:         Intel(R) USB 3.0 eXtensible Host Controller - 1.0 (Microsoft)
+Class Name:                 USB
+Class GUID:                 {36fc9e60-c465-11cf-8056-444553540000}
+Manufacturer Name:          Generic USB xHCI Host Controller
+Status:                     Started
+Driver Name:                usbxhci.inf
+
+You can even see the driver locaiton
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+What is a .inf file?
+
+An INF (Information) file is a plain text configuration file used in the Windows operating system to provide installation and configuration information for device drivers. These files contain instructions that Windows uses to install drivers for hardware components such as printers, network adapters, USB devices, and more.
+
+Key components of an INF file include:
+
+[Version] Section: Specifies the version of the INF file format being used.
+[Manufacturer] Section: Lists the manufacturers of devices supported by the INF file.
+[Device] Section: Provides information about specific devices, including the device's hardware ID, compatible IDs, and other details.
+[ClassInstall32] Section: Contains directives for installing a class of devices, such as specifying an INF file for the class installer.
+[SourceDisksFiles] Section: Lists the files needed for installation and their source locations.
+[DestinationDirs] Section: Maps destination directories for the installation of specific files.
+
+Example output
+[Version]
+Signature="$WINDOWS NT$"
+Class=Printer
+ClassGUID={4D36E979-E325-11CE-BFC1-08002BE10318}
+Provider=%MFG%
+DriverVer=01/01/2022,1.0.0.0
+
+[Manufacturer]
+%MFG%=Models
+
+[Models]
+%MODEL%=DriverInstall, USB\VID_1234&PID_5678
+
