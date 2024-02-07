@@ -1,0 +1,5 @@
+Good VHDL book
+	Effective Coding with VHDL: Principles and Best Practice (Mit Press)
+	https://www.amazon.com/Effective-Coding-VHDL-Principles-Practice/dp/0262034220
+
+
